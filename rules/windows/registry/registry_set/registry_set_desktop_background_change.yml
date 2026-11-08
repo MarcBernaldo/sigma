@@ -16,7 +16,7 @@ references:
     - https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ControlPanelDisplay::CPL_Personalization_NoDesktopBackgroundUI
 author: Nasreddine Bencherchali (Nextron Systems), Stephen Lincoln @slincoln-aiq (AttackIQ)
 date: 2023-12-21
-modified: 2025-10-17
+modified: 2026-11-08
 tags:
     - attack.persistence
     - attack.impact
@@ -27,6 +27,7 @@ logsource:
     product: windows
     category: registry_set
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection_keys:
         TargetObject|contains:
             - 'Control Panel\Desktop'
@@ -40,19 +41,10 @@ detection:
     selection_values_3:
         TargetObject|endswith: '\WallpaperStyle'
         Details: '2' # Stretch
-    filter_main_svchost:
-        # Note: Excluding GPO changes
-        Image|endswith: '\svchost.exe'
     filter_main_empty:
         TargetObject|endswith: '\Control Panel\Desktop\Wallpaper'
         Details: '(Empty)'
-    filter_main_explorer:
-        # Normally Explorer.exe is the process that changes the desktop background
-        Image|endswith: 'C:\Windows\Explorer.EXE'
     filter_optional_ec2launch:
-        Image:
-            - 'C:\Program Files\Amazon\EC2Launch\EC2Launch.exe'
-            - 'C:\Program Files (x86)\Amazon\EC2Launch\EC2Launch.exe'
         TargetObject|endswith: '\Control Panel\Desktop\Wallpaper'
     condition: selection_keys and 1 of selection_values_* and not 1 of filter_main_* and not 1 of filter_optional_*
 falsepositives:

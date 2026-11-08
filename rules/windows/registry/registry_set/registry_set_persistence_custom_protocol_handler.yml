@@ -6,7 +6,7 @@ references:
     - https://ladydebug.com/blog/2019/06/21/custom-protocol-handler-cph/
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2022-05-30
-modified: 2023-05-12
+modified: 2026-11-08
 tags:
     - attack.persistence
     - attack.defense-impairment
@@ -15,17 +15,12 @@ logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|startswith: 'HKCR\'
         Details|startswith: 'URL:'
     filter_main_ms_trusted:
         Details|startswith: 'URL:ms-' # Microsoft Protocols usually start with "ms-"
-    filter_main_generic_locations:
-        Image|startswith: # Add more folders to avoid FP
-            - 'C:\Program Files (x86)'
-            - 'C:\Program Files\'
-            - 'C:\Windows\System32\'
-            - 'C:\Windows\SysWOW64\'
     # Uncomment This section to add specific Protocol Handler names that are know
     # filter_specific:
     #     Details: 'URL:'

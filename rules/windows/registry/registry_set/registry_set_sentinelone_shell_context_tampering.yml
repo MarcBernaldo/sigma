@@ -6,13 +6,14 @@ references:
     - https://mrd0x.com/sentinelone-persistence-via-menu-context/
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2024-03-06
-modified: 2026-11-01
+modified: 2026-11-08
 tags:
     - attack.persistence
 logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains: '\shell\SentinelOneScan\command\'
     filter_main_sentinelone_default_scan_binary:
@@ -20,10 +21,6 @@ detection:
             - 'C:\Program Files\SentinelOne\Sentinel Agent'
             - 'C:\Program Files (x86)\SentinelOne\Sentinel Agent'
         Details|contains: '\SentinelScanFromContextMenu.exe'
-    filter_main_sentinelone_binary:
-        Image|startswith:
-            - 'C:\Program Files\SentinelOne\'
-            - 'C:\Program Files (x86)\SentinelOne\'
     condition: selection and not 1 of filter_main_*
 falsepositives:
     - Unknown

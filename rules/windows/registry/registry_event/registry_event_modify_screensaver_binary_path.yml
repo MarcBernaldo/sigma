@@ -7,7 +7,7 @@ references:
     - https://www.welivesecurity.com/wp-content/uploads/2017/08/eset-gazer.pdf
 author: Bartlomiej Czyz @bczyz1, oscd.community
 date: 2020-10-11
-modified: 2021-11-27
+modified: 2026-11-08
 tags:
     - attack.persistence
     - attack.privilege-escalation
@@ -16,13 +16,10 @@ logsource:
     category: registry_event
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|endswith: '\Control Panel\Desktop\SCRNSAVE.EXE' # HKEY_CURRENT_USER\Control Panel\Desktop\SCRNSAVE.EXE
-    filter:
-        Image|endswith:
-            - '\rundll32.exe'
-            - '\explorer.exe'
-    condition: selection and not filter
+    condition: selection
 falsepositives:
     - Legitimate modification of screensaver
 level: medium

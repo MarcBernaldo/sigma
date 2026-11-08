@@ -6,7 +6,7 @@ references:
     - https://www.microsoft.com/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/
 author: Florian Roth (Nextron Systems)
 date: 2021-03-05
-modified: 2023-08-17
+modified: 2026-11-08
 tags:
     - attack.privilege-escalation
     - attack.persistence
@@ -15,6 +15,7 @@ logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains: 'Software\Microsoft\Windows\CurrentVersion'
         Details|contains:
@@ -28,7 +29,6 @@ detection:
     filter:
         TargetObject|contains: 'Software\Microsoft\Windows\CurrentVersion\Run'
     filter_dotnet:
-        Image|endswith: '\msiexec.exe'
         TargetObject|contains: '\SOFTWARE\Microsoft\Windows\CurrentVersion\Installer\UserData\'
         Details|contains:
             - '\Microsoft.NET\Primary Interop Assemblies\Microsoft.mshtml.dll'

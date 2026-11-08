@@ -10,7 +10,7 @@ references:
     - https://learn.microsoft.com/en-us/outlook/troubleshoot/security/information-about-email-security-settings
 author: frack113
 date: 2021-12-28
-modified: 2026-01-09
+modified: 2026-11-08
 tags:
     - attack.persistence
     - attack.t1137
@@ -18,16 +18,12 @@ logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains|all:
             - '\SOFTWARE\Microsoft\Office\'
             - '\Outlook\Security\'
-    filter_main_outlook:
-        Image|startswith:
-            - 'C:\Program Files\Microsoft Office\'
-            - 'C:\Program Files (x86)\Microsoft Office\'
-        Image|endswith: '\OUTLOOK.EXE'
-    condition: selection and not 1 of filter_main_*
+    condition: selection
 falsepositives:
     - Administrative activity
 level: medium

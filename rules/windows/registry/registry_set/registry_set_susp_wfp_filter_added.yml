@@ -9,6 +9,7 @@ references:
     - https://www.trendmicro.com/en_us/research/24/j/edrsilencer-disrupting-endpoint-security-solutions.html
 author: Frack113
 date: 2025-10-23
+modified: 2026-11-08
 tags:
     - attack.execution
     - attack.defense-impairment
@@ -18,13 +19,10 @@ logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains: '\BFE\Parameters\Policy\Persistent\Filter\'
-    filter_main_svchost:
-        Image:
-            - 'C:\Windows\System32\svchost.exe'
-            - 'C:\Windows\SysWOW64\svchost.exe'
-    condition: selection and not 1 of filter_main_*
+    condition: selection
 falsepositives:
     - Unknown
 level: medium

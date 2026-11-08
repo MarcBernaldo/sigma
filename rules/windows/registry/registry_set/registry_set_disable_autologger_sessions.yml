@@ -17,7 +17,7 @@ references:
     - https://blog.palantir.com/tampering-with-windows-event-tracing-background-offense-and-defense-4be7ac62ac63
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2022-08-01
-modified: 2025-12-26
+modified: 2026-11-08
 tags:
     - attack.defense-impairment
     - attack.t1685.001
@@ -25,6 +25,7 @@ logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection_main:
         TargetObject|contains: '\Control\WMI\Autologger\'
     selection_values:
@@ -35,14 +36,7 @@ detection:
             - '\Enabled'
             - '\Start'
         Details: DWORD (0x00000000)
-    filter_main_wevtutil:
-        Image: 'C:\Windows\system32\wevtutil.exe'
     filter_main_defender:
-        Image|startswith:
-            - 'C:\ProgramData\Microsoft\Windows Defender\Platform\'
-            - 'C:\Program Files\Windows Defender\'
-            - 'C:\Program Files (x86)\Windows Defender\'
-        Image|endswith: '\MsMpEng.exe'
         TargetObject|contains:
             - '\DefenderApiLogger\'
             - '\DefenderAuditLogger\'

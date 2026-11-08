@@ -7,20 +7,17 @@ references:
     - https://forensafe.com/blogs/typedpaths.html
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2022-08-22
-modified: 2023-08-17
+modified: 2026-11-08
 tags:
     - attack.persistence
 logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains: '\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths\'
-    filter:
-        Image:
-            - 'C:\Windows\explorer.exe'
-            - 'C:\Windows\SysWOW64\explorer.exe'
-    condition: selection and not filter
+    condition: selection
 falsepositives:
     - Unlikely
 level: high

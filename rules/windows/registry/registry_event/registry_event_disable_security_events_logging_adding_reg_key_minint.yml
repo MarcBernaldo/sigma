@@ -7,7 +7,7 @@ references:
     - https://www.hackingarticles.in/defense-evasion-windows-event-logging-t1562-002/
 author: Ilyas Ochkov, oscd.community
 date: 2019-10-25
-modified: 2021-11-27
+modified: 2026-11-08
 tags:
     - attack.persistence
     - attack.defense-impairment
@@ -18,12 +18,13 @@ logsource:
     category: registry_event
     product: windows
 detection:
+    # aeng: a key renamed into place is, in the hive's state, a key that exists: NewName read as TargetObject
     selection:
     # Sysmon gives us HKLM\SYSTEM\CurrentControlSet\.. if ControlSetXX is the selected one
         - TargetObject: 'HKLM\SYSTEM\CurrentControlSet\Control\MiniNt'
           EventType: 'CreateKey'    # we don't want deletekey
     # key rename
-        - NewName: 'HKLM\SYSTEM\CurrentControlSet\Control\MiniNt'
+        - TargetObject:'HKLM\SYSTEM\CurrentControlSet\Control\MiniNt'
     condition: selection
 falsepositives:
     - Unknown

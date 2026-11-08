@@ -15,6 +15,7 @@ references:
     - https://learn.microsoft.com/en-us/windows/wsl/
 author: Liran Ravich, Swachchhanda Shrawan Poudel (Nextron Systems)
 date: 2026-05-05
+modified: 2026-11-08
 tags:
     - attack.stealth
     - attack.defense-impairment
@@ -25,6 +26,7 @@ logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains: '\Lxss\MSI\InstallLocation'
     filter_main_legitimate_binary:
@@ -35,10 +37,6 @@ detection:
               - ':\Program Files\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForLinux_'
               - '\AppData\Local\Microsoft\WindowsApps'
               - '%ProgramFiles%\WindowsApps\MicrosoftCorporationII.WindowsSubsystemForLinux_'
-    filter_main_msiexec:
-        Image:
-            - 'C:\Windows\System32\msiexec.exe'
-            - 'C:\Windows\SysWOW64\msiexec.exe'
     condition: selection and not 1 of filter_main_*
 falsepositives:
     - Unlikely

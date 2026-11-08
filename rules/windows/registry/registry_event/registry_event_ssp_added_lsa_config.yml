@@ -8,7 +8,7 @@ references:
     - https://github.com/EmpireProject/Empire/blob/08cbd274bef78243d7a8ed6443b8364acd1fc48b/data/module_source/persistence/Install-SSP.ps1#L157
 author: iwillkeepwatch
 date: 2019-01-18
-modified: 2026-03-30
+modified: 2026-11-08
 tags:
     - attack.privilege-escalation
     - attack.persistence
@@ -17,17 +17,12 @@ logsource:
     category: registry_event
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|endswith:
             - '\Control\Lsa\Security Packages'
             - '\Control\Lsa\OSConfig\Security Packages'
-    filter_main_msiexec:
-        Image:
-            - 'C:\Windows\system32\msiexec.exe'
-            - 'C:\Windows\syswow64\MsiExec.exe'
-    filter_main_image_null:
-        Image: null
-    condition: selection and not 1 of filter_main_*
+    condition: selection
 falsepositives:
     - Unknown
 level: high

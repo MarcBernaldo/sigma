@@ -7,7 +7,7 @@ references:
     - https://lolbas-project.github.io/lolbas/Binaries/Atbroker/
 author: Mateusz Wydra, oscd.community
 date: 2020-10-13
-modified: 2023-01-19
+modified: 2026-11-08
 tags:
     - attack.privilege-escalation
     - attack.stealth
@@ -18,16 +18,15 @@ logsource:
     category: registry_event
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains:
             - 'Software\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs'
             - 'Software\Microsoft\Windows NT\CurrentVersion\Accessibility\Configuration'
     filter_atbroker:
-        Image: 'C:\Windows\system32\atbroker.exe'
         TargetObject|contains: '\Microsoft\Windows NT\CurrentVersion\Accessibility\Configuration'
         Details: '(Empty)'
     filter_uninstallers:
-        Image|startswith: 'C:\Windows\Installer\MSI'
         TargetObject|contains: 'Software\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs'
     condition: selection and not 1 of filter_*
 falsepositives:

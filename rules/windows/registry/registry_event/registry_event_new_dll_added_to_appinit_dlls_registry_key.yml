@@ -6,7 +6,7 @@ references:
     - https://eqllib.readthedocs.io/en/latest/analytics/822dc4c5-b355-4df8-bd37-29c458997b8f.html
 author: Ilyas Ochkov, oscd.community, Tim Shelton
 date: 2019-10-25
-modified: 2022-12-25
+modified: 2026-11-08
 tags:
     - attack.privilege-escalation
     - attack.persistence
@@ -15,12 +15,13 @@ logsource:
     category: registry_event
     product: windows
 detection:
+    # aeng: a key renamed into place is, in the hive's state, a key that exists: NewName read as TargetObject
     selection:
         - TargetObject|endswith:
               - '\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls'
               - '\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls'
         # Key Rename
-        - NewName|endswith:
+        - TargetObject|endswith:
               - '\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls'
               - '\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls'
     filter:

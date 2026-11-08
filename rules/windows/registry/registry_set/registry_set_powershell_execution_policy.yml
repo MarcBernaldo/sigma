@@ -13,13 +13,14 @@ references:
     - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2023-01-11
-modified: 2023-12-14
+modified: 2026-11-08
 tags:
     - attack.defense-impairment
 logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|endswith:
             # Note for future readers: For PowerShell 7+ the ExecutionPolicy is handled via a setting file due to the fact that PWSH7 is available for mac and linux
@@ -30,12 +31,7 @@ detection:
         Details|contains:
             - 'Bypass'
             - 'Unrestricted'
-    filter_main_svchost:
-        # Note: We filter out "svchost" to avoid FP with changes using "gpedit" for example.
-        Image|contains:
-            - ':\Windows\System32\'
-            - ':\Windows\SysWOW64\'
-    condition: selection and not 1 of filter_main_*
+    condition: selection
 falsepositives:
     - Unknown
 level: medium

@@ -8,7 +8,7 @@ references:
     - https://web.archive.org/web/20200419024230/https://blog.dylan.codes/evading-sysmon-and-windows-event-logging/
 author: xknow (@xknow_infosec), xorxes (@xor_xes)
 date: 2019-04-08
-modified: 2026-06-29
+modified: 2026-11-08
 tags:
     - attack.defense-impairment
     - attack.t1685
@@ -16,22 +16,12 @@ logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject:
             - 'HKLM\System\CurrentControlSet\Services\NalDrv\ImagePath'
             - 'HKLM\System\CurrentControlSet\Services\PROCEXP152\ImagePath'
     filter:
-        Image|endswith:
-            # Please add the full paths that you use in your environment to tighten the rule
-            - '\procexp64.exe'
-            - '\procexp64a.exe'
-            - '\procexp.exe'
-            - '\procmon64.exe'
-            - '\procmon64a.exe'
-            - '\procmon.exe'
-            - '\handle.exe'
-            - '\handle64.exe'
-            - '\handle64a.exe'
         Details|contains: '\WINDOWS\system32\Drivers\PROCEXP152.SYS'
     condition: selection and not filter
 falsepositives:

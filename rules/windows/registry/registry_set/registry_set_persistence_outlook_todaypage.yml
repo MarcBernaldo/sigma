@@ -12,7 +12,7 @@ references:
     - https://trustedsec.com/blog/specula-turning-outlook-into-a-c2-with-one-registry-change
 author: Tobias Michalski (Nextron Systems), David Bertho (@dbertho) & Eirik Sveen (@0xSV1), Storebrand
 date: 2021-06-10
-modified: 2024-08-07
+modified: 2026-11-08
 tags:
     - attack.persistence
     - attack.defense-impairment
@@ -21,6 +21,7 @@ logsource:
     product: windows
     category: registry_set
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection_main:
         TargetObject|contains|all:
             - 'Software\Microsoft\Office\'
@@ -32,12 +33,7 @@ detection:
         TargetObject|endswith:
             - '\URL'
             - '\UserDefinedUrl'
-    filter_main_office:
-        Image|startswith:
-            - 'C:\Program Files\Common Files\Microsoft Shared\ClickToRun\'
-            - 'C:\Program Files\Common Files\Microsoft Shared\ClickToRun\Updates\'
-        Image|endswith: '\OfficeClickToRun.exe'
-    condition: selection_main and 1 of selection_value_* and not 1 of filter_main_*
+    condition: selection_main and 1 of selection_value_*
 falsepositives:
     - Unknown
 level: high

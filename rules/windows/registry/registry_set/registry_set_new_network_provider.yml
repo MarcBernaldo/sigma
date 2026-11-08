@@ -10,7 +10,7 @@ references:
     - https://github.com/gtworek/PSBits/tree/master/PasswordStealing/NPPSpy
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2022-08-23
-modified: 2023-08-17
+modified: 2026-11-08
 tags:
     - attack.credential-access
     - attack.t1003
@@ -18,6 +18,7 @@ logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains|all:
             - '\System\CurrentControlSet\Services\'
@@ -28,8 +29,6 @@ detection:
             - '\System\CurrentControlSet\Services\LanmanWorkstation\NetworkProvider'
             - '\System\CurrentControlSet\Services\RDPNP\NetworkProvider'
             # - '\System\CurrentControlSet\Services\P9NP\NetworkProvider' # Related to WSL remove the comment if you use WSL in your ENV
-    filter_valid_procs:
-        Image: C:\Windows\System32\poqexec.exe
     condition: selection and not 1 of filter*
 falsepositives:
     - Other legitimate network providers used and not filtred in this rule

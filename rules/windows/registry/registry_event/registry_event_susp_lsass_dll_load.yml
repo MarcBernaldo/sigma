@@ -7,7 +7,7 @@ references:
     - https://twitter.com/SBousseaden/status/1183745981189427200
 author: Florian Roth (Nextron Systems)
 date: 2019-10-16
-modified: 2022-04-21
+modified: 2026-11-08
 tags:
     - attack.privilege-escalation
     - attack.execution
@@ -17,15 +17,18 @@ logsource:
     category: registry_event
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains:
             - '\CurrentControlSet\Services\NTDS\DirectoryServiceExtPt'
             - '\CurrentControlSet\Services\NTDS\LsaDbExtPt'
     filter_domain_controller:
-        Image: 'C:\Windows\system32\lsass.exe'
         Details:
             - '%%systemroot%%\system32\ntdsa.dll'
             - '%%systemroot%%\system32\lsadb.dll'
+            # aeng: in the hive the value has one % (Sysmon's event doubles it): a DC's own
+            - '%systemroot%\system32\ntdsa.dll'
+            - '%systemroot%\system32\lsadb.dll'
     condition: selection and not 1 of filter_*
 falsepositives:
     - Unknown

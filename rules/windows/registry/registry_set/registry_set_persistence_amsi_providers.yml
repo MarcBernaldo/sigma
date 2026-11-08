@@ -10,29 +10,23 @@ references:
     - https://github.com/gtworek/PSBits/blob/8d767892f3b17eefa4d0668f5d2df78e844f01d8/FakeAMSI/FakeAMSI.c
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2022-07-21
-modified: 2025-10-26
+modified: 2026-11-08
 tags:
     - attack.persistence
 logsource:
     category: registry_set
     product: windows
 detection:
+    # aeng: process filters dropped - over a hive's state no row names a process, so they silenced the rule; the key/value is the indicator
     selection:
         TargetObject|contains:
             - '\SOFTWARE\Microsoft\AMSI\Providers\'
             - '\SOFTWARE\WOW6432Node\Microsoft\AMSI\Providers\'
     filter_optional_avast:
-        Image:
-            - 'C:\Program Files\Avast Software\Avast\RegSvr.exe'
-            - 'C:\Program Files\Avast Software\Avast\x86\RegSvr.exe'
         TargetObject|contains: '\{FB904E4E-D2C7-4C8D-8492-B620BB9896B1}'
     filter_optional_avg:
-        Image:
-            - 'C:\Program Files\AVG\Antivirus\RegSvr.exe'
-            - 'C:\Program Files\AVG\Antivirus\x86\RegSvr.exe'
         TargetObject|contains: '\{FB904E4E-D2C7-4C8D-8492-B620BB9896B1}'
     filter_optional_avira:
-        Image: 'C:\Program Files\Avira\Endpoint Protection SDK\endpointprotection.exe'
         TargetObject|contains: '\{00000001-3DCC-4B48-A82E-E2071FE58E05}'
     condition: selection and not 1 of filter_optional_*
 falsepositives:

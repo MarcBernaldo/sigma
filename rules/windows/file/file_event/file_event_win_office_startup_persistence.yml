@@ -19,7 +19,7 @@ detection:
         - TargetFilename|contains: '\Microsoft\Word\STARTUP'
         - TargetFilename|contains|all:
               - '\Office'
-              - '\Program Files'
+              - '\Microsoft Office' # aeng: was '\Program Files', which made the prefilter read every file there
               - '\STARTUP'
     selection_word_extension:
         TargetFilename|endswith:
@@ -33,7 +33,7 @@ detection:
         - TargetFilename|contains: '\Microsoft\Excel\XLSTART'
         - TargetFilename|contains|all:
               - '\Office'
-              - '\Program Files'
+              - '\Microsoft Office' # aeng: was '\Program Files', which made the prefilter read every file there
               - '\XLSTART'
     selection_excel_extension:
         TargetFilename|endswith:

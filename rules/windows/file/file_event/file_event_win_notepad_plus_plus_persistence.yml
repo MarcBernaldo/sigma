@@ -6,7 +6,7 @@ references:
     - https://pentestlab.blog/2022/02/14/persistence-notepad-plugins/
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2022-06-10
-modified: 2025-09-01
+modified: 2026-11-08
 tags:
     - attack.persistence
 logsource:
@@ -16,18 +16,9 @@ detection:
     selection:
         TargetFilename|contains: '\Notepad++\plugins\'
         TargetFilename|endswith: '.dll'
-    filter_gup:
-        Image|endswith: '\Notepad++\updater\gup.exe'
-    filter_install:
-        # This filter is for Sigma dataset you could remove it or change when using the rule in your own env
-        Image|startswith: 'C:\Users\'
-        Image|contains: '\AppData\Local\Temp\'
-        Image|endswith:
-            - '\target.exe'
-            - 'Installer.x64.exe'
+    # aeng: the disk names no process; the installer's own plugins are filtered by
+    # name, the updater and test-dataset filters dropped
     filter_main_installer:
-        Image|contains: '\npp.'
-        Image|endswith: '.exe'
         TargetFilename:
             - 'C:\Program Files\Notepad++\plugins\NppExport\NppExport.dll'
             - 'C:\Program Files\Notepad++\plugins\mimeTools\mimeTools.dll'

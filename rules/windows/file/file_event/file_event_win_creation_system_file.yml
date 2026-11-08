@@ -8,7 +8,7 @@ references:
     - Internal Research
 author: Sander Wiebing, Tim Shelton, Nasreddine Bencherchali (Nextron Systems)
 date: 2020-05-26
-modified: 2026-07-28
+modified: 2026-11-08
 tags:
     - attack.stealth
     - attack.t1036.005
@@ -102,31 +102,19 @@ detection:
             - 'C:\Windows\SysWOW64\'
             - 'C:\Windows\WinSxS\'
             - 'C:\Windows\uus\'
-    filter_main_tiworker:
-        Image|endswith:
-            - '\TiWorker.exe'
-            - '\wuaucltcore.exe'
-        TargetFilename|startswith: 'C:\Windows\Temp\'
+    # aeng: the disk names no process. Filters that were "this process, this folder"
+    # keep the folder when the folder alone is the installer's own (Store apps,
+    # PowerShell 7, SecurityHealth); the TiWorker/wuauclt ones are dropped: Windows\Temp
+    # alone would hide a payload there
     filter_main_svchost:
-        Image|endswith:
-            - 'C:\Windows\system32\svchost.exe'
-            - 'C:\Windows\SysWOW64\svchost.exe'
         TargetFilename|contains:
             - 'C:\Program Files\WindowsApps\'
             - 'C:\Program Files (x86)\WindowsApps\'
             - '\AppData\Local\Microsoft\WindowsApps\'
-    filter_main_wuauclt:
-        Image:
-            - 'C:\Windows\System32\wuauclt.exe'
-            - 'C:\Windows\SysWOW64\wuauclt.exe'
-            - 'C:\Windows\UUS\arm64\wuaucltcore.exe'
     filter_main_explorer:
         TargetFilename|endswith: 'C:\Windows\explorer.exe'
     filter_main_msiexec:
         # This filter handles system processes who are updated/installed using misexec.
-        Image|endswith:
-            - 'C:\WINDOWS\system32\msiexec.exe'
-            - 'C:\WINDOWS\SysWOW64\msiexec.exe'
         # Add more processes if you find them or simply filter msiexec on its own. If the list grows big
         TargetFilename|startswith:
             - 'C:\Program Files\PowerShell\7\pwsh.exe'
@@ -135,7 +123,6 @@ detection:
     filter_main_healtray:
         TargetFilename|contains: 'C:\Windows\System32\SecurityHealth\'
         TargetFilename|endswith: '\SecurityHealthSystray.exe'
-        Image|endswith: '\SecurityHealthSetup.exe'
     filter_optional_wslhost:
         - TargetFilename: 'C:\Program Files\WSL\wslhost.exe'
         - TargetFilename|contains|all:

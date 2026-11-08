@@ -7,7 +7,7 @@ references:
     - https://twitter.com/SBousseaden/status/1278977301745741825
 author: Florian Roth (Nextron Systems)
 date: 2020-07-03
-modified: 2022-06-02
+modified: 2026-11-08
 tags:
     - attack.command-and-control
     - attack.t1105
@@ -16,7 +16,7 @@ logsource:
     category: file_event
 detection:
     selection:
-        Image|endswith: '\svchost.exe'
+    # aeng: the disk names no process; a non-image file in the lock-screen folder is the indicator
         TargetFilename|contains: '\Personalization\LockScreenImage\'
     filter1:
         TargetFilename|contains: 'C:\Windows\'

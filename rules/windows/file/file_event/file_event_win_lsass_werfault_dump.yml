@@ -6,6 +6,7 @@ references:
     - https://github.com/helpsystems/nanodump
 author: Florian Roth (Nextron Systems)
 date: 2022-06-27
+modified: 2026-11-08
 tags:
     - attack.credential-access
     - attack.t1003.001
@@ -14,10 +15,14 @@ logsource:
     category: file_event
 detection:
     selection:
-        Image: C:\WINDOWS\system32\WerFault.exe
+    # aeng: the disk names no process; a dump file named after lsass is the indicator
         TargetFilename|contains:
             - '\lsass'
             - 'lsass.exe'
+        TargetFilename|endswith:
+            - '.dmp'
+            - '.hdmp'
+            - '.mdmp'
     condition: selection
 falsepositives:
     - Unknown

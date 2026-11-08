@@ -11,7 +11,7 @@ references:
     - https://threathunterplaybook.com/hunts/windows/201009-RemoteDCOMIErtUtilDLLHijack/notebook.html
 author: Roberto Rodriguez @Cyb3rWard0g, Open Threat Research (OTR), wagga
 date: 2020-10-12
-modified: 2022-12-18
+modified: 2026-11-08
 tags:
     - attack.lateral-movement
     - attack.t1021.002
@@ -21,7 +21,7 @@ logsource:
     category: file_event
 detection:
     selection:
-        Image: System
+    # aeng: the disk names no process; iertutil.dll belongs in System32, never beside Internet Explorer
         TargetFilename|endswith: '\Internet Explorer\iertutil.dll'
     condition: selection
 falsepositives:

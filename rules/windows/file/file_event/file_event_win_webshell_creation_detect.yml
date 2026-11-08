@@ -7,7 +7,7 @@ references:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/c95a0a1a2855dc0cd7f7327614545fe30482a636/Upload%20Insecure%20Files/README.md
 author: Beyu Denis, oscd.community, Tim Shelton, Thurein Oo
 date: 2019-10-22
-modified: 2026-11-08
+modified: 2023-10-15
 tags:
     - attack.persistence
     - attack.t1505.003
@@ -41,7 +41,8 @@ detection:
         TargetFilename|contains:
             - '\AppData\Local\Temp\'
             - '\Windows\Temp\'
-    # aeng: filter_main_system (Image 'System') dropped, the disk names no process
+    filter_main_system:
+        Image: 'System' # FP when backup/restore from drivers
     filter_main_legitimate:
         TargetFilename|contains: '\xampp'
     condition: (all of selection_wwwroot_* or all of selection_htdocs_*) and not 1 of filter_main_*

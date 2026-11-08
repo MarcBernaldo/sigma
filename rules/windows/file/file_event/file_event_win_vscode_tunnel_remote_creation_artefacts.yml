@@ -7,6 +7,7 @@ references:
     - Internal Research
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2023-10-25
+modified: 2026-11-08
 tags:
     - attack.command-and-control
 logsource:
@@ -14,8 +15,7 @@ logsource:
     product: windows
 detection:
     selection:
-        Image|contains: '\servers\Stable-'
-        Image|endswith: '\server\node.exe'
+    # aeng: the disk names no process; the VS Code server's edit history on this host is the indicator
         TargetFilename|contains: '\.vscode-server\data\User\History\'
     condition: selection
 falsepositives:

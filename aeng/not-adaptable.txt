@@ -1,0 +1,72 @@
+# Rules of SigmaHQ that cannot be made to work on the engine's disk tables
+# without becoming noise. One per line: id  file  reason. Reviewed by phase;
+# a rule SigmaHQ changes is reviewed again when its merge conflicts or by hand.
+
+# phase 2 (2026-11-08): file_event / file_delete
+75bf09fa-1dd7-4d18-9af9-dd9e492562eb  rules/windows/file/file_event/file_event_win_adsi_cache_creation_by_uncommon_tool.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+2d367498-5112-4ae5-a06a-96e7bc33a211  rules/windows/file/file_event/file_event_win_anydesk_writing_susp_binaries.yml  the writing process is the detection; the file alone is ordinary on a clean host
+e890acee-d488-420e-8f20-d9b19b3c3d43  rules/windows/file/file_event/file_event_win_arcsoc_susp_file_created.yml  the writing process is the detection; the file alone is ordinary on a clean host
+4c7f49ee-2638-43bb-b85b-ce676c30b260  rules/windows/file/file_event/file_event_win_aspnet_temp_files.yml  the writing process is the detection; the file alone is ordinary on a clean host
+9e4b7d3a-6f2c-4e9a-8d1b-3c5e7a9f2b4d  rules/windows/file/file_event/file_event_win_comodo_itsm_potentially_suspicious_file_creation.yml  the writing process is the detection; the file alone is ordinary on a clean host
+002bdb95-0cf1-46a6-9e08-d38c128a6127  rules/windows/file/file_event/file_event_win_cscript_wscript_dropper.yml  the writing process is the detection; the file alone is ordinary on a clean host
+81315b50-6b60-4d8f-9928-3466e1022515  rules/windows/file/file_event/file_event_win_desktop_ini_created_by_uncommon_process.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+aba15bdd-657f-422a-bab3-ac2d2a0d6f1c  rules/windows/file/file_event/file_event_win_dump_file_susp_creation.yml  the writing process is the detection; the file alone is ordinary on a clean host
+bd1212e5-78da-431e-95fa-c58e3237a8e6  rules/windows/file/file_event/file_event_win_exchange_webshell_drop.yml  Exchange ships .aspx in those folders; without w3wp it is the install
+6b269392-9eba-40b5-acb6-55c882b20ba6  rules/windows/file/file_event/file_event_win_exchange_webshell_drop_suspicious.yml  Exchange ships those files; without w3wp it is the install
+3b8f4c92-6a51-4d7e-9c3a-8e2d1f5a7b09  rules/windows/file/file_event/file_event_win_gup_uncommon_file_creation.yml  the writing process is the detection; the file alone is ordinary on a clean host
+602a1f13-c640-4d73-b053-be9a2fa58b96  rules/windows/file/file_event/file_event_win_hktl_powerup_dllhijacking.yml  the writing process is the detection; the file alone is ordinary on a clean host
+6e2a900a-ced9-4e4a-a9c2-13e706f9518a  rules/windows/file/file_event/file_event_win_hktl_remote_cred_dump.yml  the writing process is the detection; the file alone is ordinary on a clean host
+dbbd9f66-2ed3-4ca2-98a4-6ea985dd1a1c  rules/windows/file/file_event/file_event_win_initial_access_dll_search_order_hijacking.yml  the writing process is the detection; the file alone is ordinary on a clean host
+318557a5-150c-4c8d-b70e-a9910e199857  rules/windows/file/file_event/file_event_win_msdt_susp_directories.yml  the writing process is the detection; the file alone is ordinary on a clean host
+c61daa90-3c1e-4f18-af62-8f288b5c9aaf  rules/windows/file/file_event/file_event_win_mysqld_uncommon_file_creation.yml  the writing process is the detection; the file alone is ordinary on a clean host
+4e7050dd-e548-483f-b7d6-527ab4fa784d  rules/windows/file/file_event/file_event_win_ntds_dit_uncommon_parent_process.yml  the writing process is the detection; the file alone is ordinary on a clean host
+11b1ed55-154d-4e82-8ad7-83739298f720  rules/windows/file/file_event/file_event_win_ntds_dit_uncommon_process.yml  the writing process is the detection; the file alone is ordinary on a clean host
+0e29e3a7-1ad8-40aa-b691-9f82ecd33d66  rules/windows/file/file_event/file_event_win_office_macro_files_downloaded.yml  the writing process is the detection; the file alone is ordinary on a clean host
+b1c50487-1967-4315-a026-6491686d860e  rules/windows/file/file_event/file_event_win_office_macro_files_from_susp_process.yml  the writing process is the detection; the file alone is ordinary on a clean host
+7fd164ba-126a-4d9c-9392-0d4f7c243df0  rules/windows/file/file_event/file_event_win_office_onenote_files_in_susp_locations.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+fcc6d700-68d9-4241-9a1a-06874d621b06  rules/windows/file/file_event/file_event_win_office_onenote_susp_dropped_files.yml  the writing process is the detection; the file alone is ordinary on a clean host
+8c31f563-f9a7-450c-bfa8-35f8f32f1f61  rules/windows/file/file_event/file_event_win_office_outlook_macro_creation.yml  covered by the adapted Suspicious Outlook Macro Created
+c7a74c80-ba5a-486e-9974-ab9e682bc5e4  rules/windows/file/file_event/file_event_win_office_susp_file_extension.yml  the writing process is the detection; the file alone is ordinary on a clean host
+7047d730-036f-4f40-b9d8-1c63e36d5e62  rules/windows/file/file_event/file_event_win_powershell_drop_binary_or_script.yml  the writing process is the detection; the file alone is ordinary on a clean host
+576426ad-0131-4001-ae01-be175da0c108  rules/windows/file/file_event/file_event_win_powershell_drop_powershell.yml  the writing process is the detection; the file alone is ordinary on a clean host
+e36941d0-c0f0-443f-bc6f-cb2952eb69ea  rules/windows/file/file_event/file_event_win_powershell_module_creation.yml  the writing process is the detection; the file alone is ordinary on a clean host
+e3845023-ca9a-4024-b2b2-5422156d5527  rules/windows/file/file_event/file_event_win_powershell_module_uncommon_creation.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+92fa78e7-4d39-45f1-91a3-8b23f3f1088d  rules/windows/file/file_event/file_event_win_powershell_startup_shortcuts.yml  the writing process is the detection; the file alone is ordinary on a clean host
+1027d292-dd87-4a1a-8701-2abe04d7783c  rules/windows/file/file_event/file_event_win_ps_script_policy_test_creation_by_uncommon_process.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+fccfb43e-09a7-4bd2-8b37-a5a7df33386d  rules/windows/file/file_event/file_event_win_rdp_file_susp_creation.yml  the writing process is the detection; the file alone is ordinary on a clean host
+145095eb-e273-443b-83d0-f9b519b7867b  rules/windows/file/file_event/file_event_win_regedit_print_as_pdf.yml  the writing process is the detection; the file alone is ordinary on a clean host
+0afecb6e-6223-4a82-99fb-bf5b981e92a5  rules/windows/file/file_event/file_event_win_remote_access_tools_screenconnect_remote_file.yml  the writing process is the detection; the file alone is ordinary on a clean host
+1277f594-a7d1-4f28-a2d3-73af5cbeab43  rules/windows/file/file_event/file_event_win_shell_write_susp_directory.yml  the writing process is the detection; the file alone is ordinary on a clean host
+b8fd0e93-ff58-4cbd-8f48-1c114e342e62  rules/windows/file/file_event/file_event_win_shell_write_susp_files_extensions.yml  the writing process is the detection; the file alone is ordinary on a clean host
+e15b518d-b4ce-4410-a9cd-501f23ce4a18  rules/windows/file/file_event/file_event_win_susp_colorcpl.yml  the writing process is the detection; the file alone is ordinary on a clean host
+409f8a98-4496-4aaa-818a-c931c0a8b832  rules/windows/file/file_event/file_event_win_susp_creation_by_mobsync.yml  the writing process is the detection; the file alone is ordinary on a clean host
+7280c9f3-a5af-45d0-916a-bc01cb4151c9  rules/windows/file/file_event/file_event_win_susp_exchange_aspx_write.yml  Exchange ships .aspx there; without the process it is the install
+89c42960-f244-4dad-9151-ae9b1a3287a2  rules/windows/file/file_event/file_event_win_susp_file_write_in_webapps_root.yml  the writing process is the detection; the file alone is ordinary on a clean host
+1f0489be-b496-4ddf-b3a9-5900f2044e9c  rules/windows/file/file_event/file_event_win_susp_filewrite_in_sharepoint_layouts_dir.yml  SharePoint ships .aspx there; the process is the signal
+654fcc6d-840d-4844-9b07-2c3300e54a26  rules/windows/file/file_event/file_event_win_susp_legitimate_app_dropping_archive.yml  the writing process is the detection; the file alone is ordinary on a clean host
+f0540f7e-2db3-4432-b9e0-3965486744bc  rules/windows/file/file_event/file_event_win_susp_legitimate_app_dropping_exe.yml  the writing process is the detection; the file alone is ordinary on a clean host
+1cf465a1-2609-4c15-9b66-c32dbe4bfd67  rules/windows/file/file_event/file_event_win_susp_legitimate_app_dropping_in_uncommon_location.yml  the writing process is the detection; the file alone is ordinary on a clean host
+7d604714-e071-49ff-8726-edeb95a70679  rules/windows/file/file_event/file_event_win_susp_legitimate_app_dropping_script.yml  the writing process is the detection; the file alone is ordinary on a clean host
+3da70954-0f2c-4103-adff-b7440368f50e  rules/windows/file/file_event/file_event_win_susp_procexplorer_driver_created_in_tmp_folder.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+80e1f67a-4596-4351-98f5-a9c3efabac95  rules/windows/file/file_event/file_event_win_susp_task_write.yml  the writing process is the detection; the file alone is ordinary on a clean host
+1d2de8a6-4803-4fde-b85b-f58f3aa7a705  rules/windows/file/file_event/file_event_win_susp_wdac_policy_creation.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+9b64de98-9db3-4033-bd7a-f51430105f00  rules/windows/file/file_event/file_event_win_susp_windows_terminal_profile.yml  the writing process is the detection; the file alone is ordinary on a clean host
+34746e8c-5fb8-415a-b135-0abc167e912a  rules/windows/file/file_event/file_event_win_susp_winsxs_binary_creation.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+0a1255c5-d732-4b62-ac02-b5152d34fb83  rules/windows/file/file_event/file_event_win_sysinternals_adexplorer_dump_written.yml  the writing process is the detection; the file alone is ordinary on a clean host
+16fe46bb-4f64-46aa-817d-ff7bec4a2352  rules/windows/file/file_event/file_event_win_sysinternals_livekd_driver.yml  the writing process is the detection; the file alone is ordinary on a clean host
+059c5af9-5131-4d8d-92b2-de4ad6146712  rules/windows/file/file_event/file_event_win_sysinternals_livekd_driver_susp_creation.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+de46c52b-0bf8-4936-a327-aace94f94ac6  rules/windows/file/file_event/file_event_win_sysinternals_procexp_driver_susp_creation.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+a05baa88-e922-4001-bc4d-8738135f27de  rules/windows/file/file_event/file_event_win_sysinternals_procmon_driver_susp_creation.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+52753ea4-b3a0-4365-910d-36cff487b789  rules/windows/file/file_event/file_event_win_tsclient_filewrite_startup.yml  a Startup write is already the adapted Startup Folder File Write
+63e4f530-65dc-49cc-8f80-ccfa95c69d43  rules/windows/file/file_event/file_event_win_uac_bypass_eventvwr.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+48ea844d-19b1-4642-944e-fe39c2cc1fec  rules/windows/file/file_event/file_event_win_uac_bypass_idiagnostic_profile.yml  the writing process is the detection; the file alone is ordinary on a clean host
+d102b8f5-61dc-4e68-bd83-9a3187c67377  rules/windows/file/file_event/file_event_win_vscode_tunnel_renamed_execution.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+74a2b37d-fea4-41e0-9ac7-c9fbcf1f60cc  rules/windows/file/file_event/file_event_win_winrar_file_creation_in_startup_folder.yml  the writing process is the detection; the file alone is ordinary on a clean host
+33f41cdd-35ac-4ba8-814b-c6a4244a1ad4  rules/windows/file/file_event/file_event_win_wmi_persistence_script_event_consumer_write.yml  the writing process is the detection; the file alone is ordinary on a clean host
+2f400434-01e1-416b-b52c-bb5bfbb9eb78  rules/windows/file/file_event/file_event_win_wsl_binary_modification.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+06125661-3814-4e03-bfa2-1e4411c60ac3  rules/windows/file/file_delete/file_delete_win_delete_backup_file.yml  backup files are rotated and deleted routinely; the deleting shell is the signal
+0a1f9d29-6465-4776-b091-7f43b26e4c89  rules/windows/file/file_delete/file_delete_win_delete_prefetch.yml  Windows itself prunes Prefetch; without the process every pruning fires
+b1decb61-ed83-4339-8e95-53ea51901720  rules/windows/file/file_delete/file_delete_win_delete_teamviewer_logs.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+8f0b1fb1-9bd4-4e74-8cdf-a8de4d2adfd0  rules/windows/file/file_delete/file_delete_win_unusual_deletion_by_dns_exe.yml  the writing process is the detection; the file alone is ordinary on a clean host
+3109530e-ab47-4cc6-a953-cac5ebcc93ae  rules/windows/file/file_delete/file_delete_win_zone_identifier_ads_uncommon.yml  its point is WHICH process wrote the file; on disk the file alone is ordinary
+39f1f9f2-9636-45de-98f6-a4046aa8e4b9  rules/windows/file/file_event/file_event_win_webshell_creation_detect.yml  on disk state a deployed site's whole content matches (.asp/.ph inside DLL names too): measured, 166 rows of a legitimate site on one host

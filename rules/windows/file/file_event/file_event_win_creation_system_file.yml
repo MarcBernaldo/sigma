@@ -123,6 +123,9 @@ detection:
     filter_main_healtray:
         TargetFilename|contains: 'C:\Windows\System32\SecurityHealth\'
         TargetFilename|endswith: '\SecurityHealthSystray.exe'
+    filter_main_aeng_msinfo:
+        # aeng: Windows ships msinfo32.exe here too (seen on every host of a real case)
+        TargetFilename|endswith: '\Common Files\Microsoft Shared\MSInfo\msinfo32.exe'
     filter_optional_wslhost:
         - TargetFilename: 'C:\Program Files\WSL\wslhost.exe'
         - TargetFilename|contains|all:

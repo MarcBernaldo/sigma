@@ -6,7 +6,7 @@ references:
     - https://github.com/hfiref0x/UACME
 author: Christian Burkard (Nextron Systems)
 date: 2021-08-30
-modified: 2022-10-09
+modified: 2026-11-08
 tags:
     - attack.privilege-escalation
     - attack.t1548.002
@@ -15,7 +15,7 @@ logsource:
     product: windows
 detection:
     selection:
-        Image: 'C:\Program Files\Internet Explorer\IEInstal.exe'
+    # aeng: the disk names no process; a consent.exe in a user's Temp is the indicator
         TargetFilename|startswith: 'C:\Users\'
         TargetFilename|contains: '\AppData\Local\Temp\'
         TargetFilename|endswith: 'consent.exe'

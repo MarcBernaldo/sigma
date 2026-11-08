@@ -1,0 +1,330 @@
+# (TargetObject, Details) a clean install holds and a rule of this fork matches.
+# Built by make_baseline.py from VanillaWindowsRegistryHives (MIT, Andrew Rathbun):
+#   W10_22H2_Pro_20230321_19045.2728
+#   W11_22H2_Pro_20230321_22621.1413
+#   WindowsServer2019_1809_Standard_20221115_17763.3650
+#   WindowsServer2022_21H2_Standard_20230321_20348.1607
+# alert_win_sigma drops a registry value equal to one of these before the rules run.
+HKLM\SOFTWARE\Classes\.exe\(default)	exefile
+HKLM\SOFTWARE\Classes\CLSID\{06290BD0-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\CLSID\{06290BD1-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\CLSID\{06290BD2-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\CLSID\{06290BD3-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\CLSID\{06290BD4-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\CLSID\{06290BD5-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\CLSID\{06290BD8-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\CLSID\{06290BD9-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\CLSID\{06290BDA-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\CLSID\{06290BDB-48AA-11D2-8432-006008C3FBFC}\InprocServer32\(default)	C:\Windows\System32\scrobj.dll
+HKLM\SOFTWARE\Classes\Folder\shell\open\command\DelegateExecute	{11dbb47c-a525-400b-9e80-a54615a090c0}
+HKLM\SOFTWARE\Classes\WOW6432Node\CLSID\{52A2AAAE-085D-4187-97EA-8C30DB990436}\InprocServer32\(default)	C:\Windows\SysWOW64\hhctrl.ocx
+HKLM\SOFTWARE\Classes\WOW6432Node\CLSID\{C90250F3-4D7D-4991-9B69-A5C5BC1C2AE6}\InProcServer32\(default)	C:\Windows\SysWOW64\ActXPrxy.dll
+HKLM\SOFTWARE\Classes\exefile\shell\open\command\(default)	"%1" %*
+HKLM\SOFTWARE\Classes\exefile\shell\runas\command\IsolatedCommand	"%1" %*
+HKLM\SOFTWARE\Classes\ms-settings\Shell\Open\Command\DelegateExecute	{4ed3a719-cea8-4bd9-910d-e252f997afc2}
+HKLM\SOFTWARE\Microsoft\Internet Explorer\Main\Extensions Off Page	about:NoAdd-ons
+HKLM\SOFTWARE\Microsoft\MSDTC\MTxOCI\OracleOciLibPath	%systemroot%\system32
+HKLM\SOFTWARE\Microsoft\NetSh\2	ifmon.dll
+HKLM\SOFTWARE\Microsoft\NetSh\4	rasmontr.dll
+HKLM\SOFTWARE\Microsoft\NetSh\WcnNetsh	WcnNetsh.dll
+HKLM\SOFTWARE\Microsoft\NetSh\authfwcfg	authfwcfg.dll
+HKLM\SOFTWARE\Microsoft\NetSh\dhcpclient	dhcpcmonitor.dll
+HKLM\SOFTWARE\Microsoft\NetSh\dot3cfg	dot3cfg.dll
+HKLM\SOFTWARE\Microsoft\NetSh\fwcfg	fwcfg.dll
+HKLM\SOFTWARE\Microsoft\NetSh\hnetmon	hnetmon.dll
+HKLM\SOFTWARE\Microsoft\NetSh\netiohlp	netiohlp.dll
+HKLM\SOFTWARE\Microsoft\NetSh\netprofm	netprofm.dll
+HKLM\SOFTWARE\Microsoft\NetSh\nettrace	nettrace.dll
+HKLM\SOFTWARE\Microsoft\NetSh\nshhttp	nshhttp.dll
+HKLM\SOFTWARE\Microsoft\NetSh\nshipsec	nshipsec.dll
+HKLM\SOFTWARE\Microsoft\NetSh\nshwfp	nshwfp.dll
+HKLM\SOFTWARE\Microsoft\NetSh\p2pnetsh	p2pnetsh.dll
+HKLM\SOFTWARE\Microsoft\NetSh\peerdistsh	peerdistsh.dll
+HKLM\SOFTWARE\Microsoft\NetSh\rpc	rpcnsh.dll
+HKLM\SOFTWARE\Microsoft\NetSh\whhelper	whhelper.dll
+HKLM\SOFTWARE\Microsoft\NetSh\wlancfg	wlancfg.dll
+HKLM\SOFTWARE\Microsoft\NetSh\wshelper	wshelper.dll
+HKLM\SOFTWARE\Microsoft\NetSh\wwancfg	wwancfg.dll
+HKLM\SOFTWARE\Microsoft\Security Center\Provider\Av\{D68DDC3A-831F-4fae-9E44-DA132C1ACF46}\PRODUCTEXE	windowsdefender://
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\OneCore\DirectX\DirectXDatabaseUpdater\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Application Experience\AitAgent\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Application Experience\ProgramDataUpdater\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Live\Roaming\MaintenanceTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Live\Roaming\SynchronizeWithStorage\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\MemoryDiagnostic\CorruptionDetector\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\MemoryDiagnostic\DecompressionFailureDetector\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\MemoryDiagnostic\MemUsageTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\PLA\System\ConvertLogEntries\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\SettingSync\BackgroundUploadTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\SettingSync\BackupTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\SettingSync\NetworkStateChangeTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Shell\CrawlStartPages\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Shell\FamilySafetyRefresh\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Software Inventory Logging\Daily Collector\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\TaskScheduler\Idle Maintenance\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\TaskScheduler\Maintenance Configurator\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\TaskScheduler\Manual Maintenance\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\TaskScheduler\Regular Maintenance\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\UpdateOrchestrator\UpdateModelTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WS\Badge Update\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WS\License Validation\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WS\Sync Licenses\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WS\WSRefreshBannedAppsListTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WS\WSTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Windows Activation Technologies\ValidationTaskDeadline\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Windows Activation Technologies\ValidationTask\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\Windows Subsystem For Linux\AptPackageIndexUpdate\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WindowsBackup\ConfigNotification\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WindowsUpdate\Automatic App Update\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WindowsUpdate\sih\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\WindowsUpdate\sihboot\Index	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SecEdit\Reg Values\MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA\DisplayType	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SecEdit\Reg Values\MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop\DisplayType	DWORD (0x00000000)
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Tracing\SCM\Regular\TracingDisabled	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\IEXPLORE.EXE\(default)	C:\Program Files\Internet Explorer\IEXPLORE.EXE
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\cmmgr32.exe\CmNative	DWORD (0x00000002)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\BackupPath\(default)	%SystemRoot%\system32\wbadmin.msc
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\DefragPath\(default)	%systemroot%\system32\dfrgui.exe
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{289AF617-1CC3-42A6-926C-E6A863F0E3BA}\(default)	DLNA Media Servers Data Source
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{35786D3C-B075-49b9-88DD-029876E11C01}\(default)	Portable Devices
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{9113A02D-00A3-46B9-BC5F-9C04DADDD5D7}\(default)	Enhanced Storage Data Source
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{b155bdf8-02f0-451e-9a26-ae317cfd7779}\(default)	nethood delegate folder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{088e3905-0323-4b02-9826-5d99428e115f}\(default)	CLSID_ThisPCLocalDownloadsRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{1CF1260C-4DD0-4ebb-811F-33C572699FDE}\(default)	CLSID_ThisPCMyMusicRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{24ad3ad4-a569-4530-98e1-ab02f9417aa8}\(default)	CLSID_ThisPCLocalPicturesRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{374DE290-123F-4565-9164-39C4925E467B}\(default)	CLSID_ThisPCDownloadsRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3ADD1653-EB32-4cb0-BBD7-DFA0ABB5ACCA}\(default)	CLSID_ThisPCMyPicturesRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3dfdf296-dbec-4fb4-81d1-6a3438bcf4de}\(default)	CLSID_ThisPCLocalMusicRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A0953C92-50DC-43bf-BE83-3742FED03C9C}\(default)	CLSID_ThisPCMyVideosRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A8CDFF1C-4878-43be-B5FD-F8091C1C60D0}\(default)	CLSID_ThisPCDocumentsRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}\(default)	CLSID_ThisPCDesktopRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{d3162b92-9365-467a-956b-92703aca08af}\(default)	CLSID_ThisPCLocalDocumentsRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a}\(default)	CLSID_ThisPCLocalVideosRegFolder
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\RemovableStorage\DelegateFolders\{35786D3C-B075-49b9-88DD-029876E11C01}\(default)	Portable Devices
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\cleanuppath\(default)	%SystemRoot%\System32\cleanmgr.exe /D %c
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Active Setup Temp Folders\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Content Indexer Cleaner\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\D3D Shader Cache\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Device Driver Packages\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Diagnostic Data Viewer database files\CleanupString	rundll32.exe utcutil.dll,DiskCleanupEnd
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Diagnostic Data Viewer database files\PreCleanupString	rundll32.exe utcutil.dll,DiskCleanupStart
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Downloaded Program Files\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Internet Cache Files\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Language Pack\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Old ChkDsk Files\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\RetailDemo Offline Content\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Setup Log Files\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\System error minidump files\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Temporary Files\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Temporary Sync Files\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Upgrade Discarded Files\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\User file versions\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Windows Defender\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Windows ESD installation files\Autorun	DWORD (0x00000001)
+HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\shutdownwithoutlogon	DWORD (0x00000000)
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Internet Explorer\Main\Extensions Off Page	about:NoAdd-ons
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\aux	wdmaud.drv
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\aux1	wdmaud.drv
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\midi	wdmaud.drv
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\midi1	wdmaud.drv
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\midimapper	midimap.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\mixer	wdmaud.drv
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\mixer1	wdmaud.drv
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.imaadpcm	imaadp32.acm
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.l3acm	C:\Windows\SysWOW64\l3codeca.acm
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.msadpcm	msadp32.acm
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.msg711	msg711.acm
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.msgsm610	msgsm32.acm
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.cvid	iccvid.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.i420	iyuv_32.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.iyuv	iyuv_32.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.mrle	msrle32.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.msvc	msvidc32.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.uyvy	msyuv.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.yuy2	msyuv.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.yvu9	tsbyuv.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.yvyu	msyuv.dll
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\wave	wdmaud.drv
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\wave1	wdmaud.drv
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\wavemapper	msacm32.drv
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\IniFileMapping\win.ini\Windows\APPINIT_DLLS	SYS:MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\WINDOWS
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\SecEdit\Reg Values\MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA\DisplayType	DWORD (0x00000000)
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows NT\CurrentVersion\SecEdit\Reg Values\MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop\DisplayType	DWORD (0x00000000)
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\DefragPath\(default)	%systemroot%\system32\dfrgui.exe
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{289AF617-1CC3-42A6-926C-E6A863F0E3BA}\(default)	DLNA Media Servers Data Source
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{35786D3C-B075-49b9-88DD-029876E11C01}\(default)	Portable Devices
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{640167b4-59b0-47a6-b335-a6b3c0695aea}\(default)	Portable Media Devices
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{b155bdf8-02f0-451e-9a26-ae317cfd7779}\(default)	nethood delegate folder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{088e3905-0323-4b02-9826-5d99428e115f}\(default)	CLSID_ThisPCLocalDownloadsRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{1CF1260C-4DD0-4ebb-811F-33C572699FDE}\(default)	CLSID_ThisPCMyMusicRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{24ad3ad4-a569-4530-98e1-ab02f9417aa8}\(default)	CLSID_ThisPCLocalPicturesRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{374DE290-123F-4565-9164-39C4925E467B}\(default)	CLSID_ThisPCDownloadsRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3ADD1653-EB32-4cb0-BBD7-DFA0ABB5ACCA}\(default)	CLSID_ThisPCMyPicturesRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{3dfdf296-dbec-4fb4-81d1-6a3438bcf4de}\(default)	CLSID_ThisPCLocalMusicRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A0953C92-50DC-43bf-BE83-3742FED03C9C}\(default)	CLSID_ThisPCMyVideosRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A8CDFF1C-4878-43be-B5FD-F8091C1C60D0}\(default)	CLSID_ThisPCDocumentsRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}\(default)	CLSID_ThisPCDesktopRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{d3162b92-9365-467a-956b-92703aca08af}\(default)	CLSID_ThisPCLocalDocumentsRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{f86fa3ab-70d2-4fc7-9c99-fcbf05467f3a}\(default)	CLSID_ThisPCLocalVideosRegFolder
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\RemovableStorage\DelegateFolders\{35786D3C-B075-49b9-88DD-029876E11C01}\(default)	Portable Devices
+HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\cleanuppath\(default)	%SystemRoot%\System32\cleanmgr.exe /D %c
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\Extensions Off Page	about:NoAdd-ons
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\aux	wdmaud.drv
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\midi	wdmaud.drv
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\midimapper	midimap.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\mixer	wdmaud.drv
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.imaadpcm	imaadp32.acm
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.l3acm	C:\Windows\SysWOW64\l3codeca.acm
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.msadpcm	msadp32.acm
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.msg711	msg711.acm
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\msacm.msgsm610	msgsm32.acm
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.cvid	iccvid.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.i420	iyuv_32.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.iyuv	iyuv_32.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.mrle	msrle32.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.msvc	msvidc32.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.uyvy	msyuv.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.yuy2	msyuv.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.yvu9	tsbyuv.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\vidc.yvyu	msyuv.dll
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\wave	wdmaud.drv
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Drivers32\wavemapper	msacm32.drv
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\IniFileMapping\win.ini\Windows\APPINIT_DLLS	SYS:MICROSOFT\\WINDOWS NT\\CURRENTVERSION\\WINDOWS
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\SecEdit\Reg Values\MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\EnableLUA\DisplayType	DWORD (0x00000000)
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\SecEdit\Reg Values\MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System\PromptOnSecureDesktop\DisplayType	DWORD (0x00000000)
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\DefragPath\(default)	%systemroot%\system32\dfrgui.exe
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{289AF617-1CC3-42A6-926C-E6A863F0E3BA}\(default)	DLNA Media Servers Data Source
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{35786D3C-B075-49b9-88DD-029876E11C01}\(default)	Portable Devices
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{640167b4-59b0-47a6-b335-a6b3c0695aea}\(default)	Portable Media Devices
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\DelegateFolders\{b155bdf8-02f0-451e-9a26-ae317cfd7779}\(default)	nethood delegate folder
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\RemovableStorage\DelegateFolders\{35786D3C-B075-49b9-88DD-029876E11C01}\(default)	Portable Devices
+HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\cleanuppath\(default)	%SystemRoot%\System32\cleanmgr.exe /D %c
+HKLM\SYSTEM\CurrentControlSet\Control\ContentIndex\Language\English_UK\StemmerClass	{61A48126-EF74-4D4A-9DDA-43FD542CAD1E}
+HKLM\SYSTEM\CurrentControlSet\Control\ContentIndex\Language\English_UK\WBreakerClass	{9DAA54E8-CD95-4107-8E7F-BA3F24732D95}
+HKLM\SYSTEM\CurrentControlSet\Control\ContentIndex\Language\English_US\StemmerClass	{61A48126-EF74-4d4a-9DDA-43FD542CAD1E}
+HKLM\SYSTEM\CurrentControlSet\Control\ContentIndex\Language\English_US\WBreakerClass	{9DAA54E8-CD95-4107-8E7F-BA3F24732D95}
+HKLM\SYSTEM\CurrentControlSet\Control\ContentIndex\Language\Neutral\StemmerClass	
+HKLM\SYSTEM\CurrentControlSet\Control\ContentIndex\Language\Neutral\WBreakerClass	{1D49F57D-47D2-4AEE-A69B-593EC558773F}
+HKLM\SYSTEM\CurrentControlSet\Control\CrashControl\DumpLogLevel	DWORD (0x00000000)
+HKLM\SYSTEM\CurrentControlSet\Control\CrashControl\StorageTelemetry\DeviceDumpEnabled	DWORD (0x00000000)
+HKLM\SYSTEM\CurrentControlSet\Control\LsaExtensionConfig\LsaSrv\Extensions	lsasrv.dll
+HKLM\SYSTEM\CurrentControlSet\Control\LsaExtensionConfig\LsaSrv\Extensions	lsasrv.dll efslsaext.dll
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\AppInfo\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\AppMgmt\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\AudioEndpointBuilder\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\AudioSrv\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\BrokerInfrastructure\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\CBDHSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\CoreMessagingRegistrar\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\CryptSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\DcomLaunch\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\DeviceInstall\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\EFS\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\EventLog\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\HelpSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\KeyIso\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\LSM\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\NTDS\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\Netlogon\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\NgcCtnrSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\NgcSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\PlugPlay\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\Power\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\ProfSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\RpcEptMapper\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\RpcSs\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\SWPRV\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\StateRepository\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\SystemEventsBroker\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\TBS\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\TabletInputService\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\TextInputManagementService\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\TrustedInstaller\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\UserManager\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\VDS\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\WinDefend\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\WinMgmt\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\sacsvr\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Minimal\vmms\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\AFD\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\AppInfo\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\AppMgmt\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\AudioEndpointBuilder\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\AudioSrv\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\BFE\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\BrokerInfrastructure\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Browser\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\CBDHSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\CoreMessagingRegistrar\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\CryptSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\DcomLaunch\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\DeviceInstall\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Dhcp\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\DnsCache\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Dot3Svc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\EFS\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Eaphost\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\EventLog\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\HelpSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\IKEEXT\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\KeyIso\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\LSM\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\LanmanServer\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\LanmanWorkstation\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\LmHosts\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\MPSSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Messenger\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\NTDS\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\NativeWifiP\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Ndisuio\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\NetBIOS\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\NetBT\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\NetMan\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\NetSetupSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Netlogon\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\NgcCtnrSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\NgcSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\NlaSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Nsi\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\PlugPlay\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\PolicyAgent\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Power\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\ProfSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\RpcEptMapper\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\RpcSs\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\SCardSvr\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\SWPRV\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\SharedAccess\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\StateRepository\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\SystemEventsBroker\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\TBS\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\TabletInputService\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Tcpip\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\TextInputManagementService\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\TrustedInstaller\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\UserManager\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\VDS\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\VaultSvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Wcmsvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\WinDefend\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\WinMgmt\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\Wlansvc\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\netprofm\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\rdsessmgr\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\sacsvr\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot\Network\vmms\(default)	Service
+HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Configuration Manager\EnablePeriodicBackup	DWORD (0x00000001)
+HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\DefaultUserConfiguration\Shadow	DWORD (0x00000001)
+HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\Console\Shadow	DWORD (0x00000001)
+HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\InitialProgram	
+HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\Shadow	DWORD (0x00000001)
+HKLM\SYSTEM\CurrentControlSet\Services\TermService\Parameters\ServiceDll	%SystemRoot%\System32\termsrv.dll
+HKLM\SYSTEM\CurrentControlSet\Services\TermService\Parameters\ServiceDllUnloadOnStop	DWORD (0x00000001)
+HKLM\SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\AutodialDLL	C:\Windows\System32\rasadhlp.dll
+HKU\USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Hidden	DWORD (0x00000002)
+HKU\USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\HideFileExt	DWORD (0x00000001)
+HKU\USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\ShowSuperHidden	DWORD (0x00000000)
+HKU\USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Hidden	DWORD (0x00000002)
+HKU\USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\HideFileExt	DWORD (0x00000001)
+HKU\USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\ShowSuperHidden	DWORD (0x00000000)

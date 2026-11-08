@@ -8,7 +8,7 @@ references:
     - https://specterops.io/assets/resources/SpecterOps_Subverting_Trust_in_Windows.pdf
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2022-07-21
-modified: 2023-08-17
+modified: 2026-11-08
 tags:
     - attack.persistence
     - attack.defense-impairment
@@ -32,6 +32,19 @@ detection:
             # Add more legitimate SIP providers according to your env
             - WINTRUST.DLL
             - mso.dll
+    filter_aeng_system_paths:
+        # aeng: read over the hive's state, every SIP DLL a product installed is here
+        # (hundreds per host). One loaded from a system or program folder, or by bare
+        # name (from System32), is an install; the indicator is a SIP DLL anywhere else.
+        - Details|startswith:
+              - 'C:\Windows\System32\'
+              - 'C:\Windows\SysWOW64\'
+              - 'C:\Windows\Microsoft.NET\'
+              - '%windir%\'
+              - '%SystemRoot%\'
+              - 'C:\Program Files\'
+              - 'C:\Program Files (x86)\'
+        - Details|re: '^[^\\]+$'
     filter_poqexec:
         Image: 'C:\Windows\System32\poqexec.exe'
         TargetObject|contains: '\CryptSIPDll'

@@ -9,7 +9,7 @@ references:
     - https://learn.microsoft.com/en-us/windows/win32/eventlog/eventlog-key
 author: D3F7A5105
 date: 2023-01-02
-modified: 2026-10-13
+modified: 2026-11-10
 tags:
     - attack.defense-impairment
     - attack.t1685.001
@@ -25,7 +25,10 @@ detection:
     filter_main_baseimage:
         TargetFilename|startswith: 'C:\ProgramData\Microsoft\Windows\Containers\BaseImages\'
         TargetFilename|contains: '\Windows\System32\winevt\Logs\'
+    filter_main_systemtemp:
+        TargetFilename|startswith: 'C:\Windows\SystemTemp\'
     condition: selection and not 1 of filter_main_*
+    # aeng: SystemTemp filtered - a clean Windows 11 (VanillaWindowsReference 22H2) holds log copies there; the folder is writable by SYSTEM only
 falsepositives:
     - Administrator or backup activity
     - An unknown bug seems to trigger the Windows "svchost" process to drop EVTX files in the "C:\Windows\Temp" directory in the form "<log_name">_<uuid>.evtx". See https://superuser.com/questions/1371229/low-disk-space-after-filling-up-c-windows-temp-with-evtx-and-txt-files

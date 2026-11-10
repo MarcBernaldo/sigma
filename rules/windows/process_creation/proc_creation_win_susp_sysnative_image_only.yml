@@ -1,0 +1,38 @@
+title: Process Creation Using Sysnative Folder - Image Only
+id: dfcc2158-1571-41f6-ba1f-320b3f4ba8a9
+related:
+    - id: 3c1b5fb0-c72f-45ba-abd1-4d4c353144ab
+      type: derived
+status: test
+description: Detects a program recorded under the Sysnative folder (common for CobaltStrike spawns) in an execution artifact that keeps the path but not the command line, such as the shimcache or the amcache.
+references:
+    - https://thedfirreport.com/2021/08/29/cobalt-strike-a-defenders-guide/
+author: Max Altgelt (Nextron Systems)
+date: 2022-08-23
+modified: 2026-11-10
+tags:
+    - attack.privilege-escalation
+    - attack.stealth
+    - attack.t1055
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        Image|contains: ':\Windows\Sysnative\'
+    no_command_line:
+        CommandLine: null
+    filter_main_ngen:
+        Image|contains:
+            - 'C:\Windows\Microsoft.NET\Framework64\v'
+            - 'C:\Windows\Microsoft.NET\Framework\v'
+            - 'C:\Windows\Microsoft.NET\FrameworkArm\v'
+            - 'C:\Windows\Microsoft.NET\FrameworkArm64\v'
+        Image|endswith: '\ngen.exe'
+    condition: selection and no_command_line and not 1 of filter_main_*
+# aeng: derived from 3c1b5fb0 for rows with no command line (prefetch, amcache,
+# shimcache), where that rule's command-line filters are NULL and it never fires.
+# The path is the indicator; a row with a command line is left to the original.
+falsepositives:
+    - Unknown
+level: medium

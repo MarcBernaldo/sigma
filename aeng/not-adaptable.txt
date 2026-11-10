@@ -124,3 +124,6 @@ bef37fa2-f205-4a7b-b484-0759bfd5f86f  rules/windows/process_creation/proc_creati
 40b6e656-4e11-4c0c-8772-c1cc6dae34ce  rules/windows/registry/registry_set/registry_set_scr_file_executed_by_rundll32.yml  duplicate: without the writer it is a subset of registry_event_modify_screensaver_binary_path, already adapted
 4eec988f-7bf0-49f1-8675-1e6a510b3a2a  rules/windows/registry/registry_set/registry_set_susp_pendingfilerenameoperations.yml  the writer is the only discriminator; PendingFileRenameOperations is set by every installer
 6db5eaf9-88f7-4ed9-af7d-9ef2ad12f236  rules/windows/registry/registry_set/registry_set_winget_admin_settings_tampering.yml  the key lives in winget's app hive (\REGISTRY\A\), which the engine does not read
+
+# phase 6 (2026-11-10): web rules through the fork
+19aa4f58-94ca-45ff-bc34-92e533c0994a  rules/web/webserver_generic/web_susp_useragents.yml  duplicate: every UA it names is in web_suspicious.txt scanner_ua (engine v0.7.198), alert_web reports it

@@ -116,3 +116,11 @@ b52e84a3-029e-4529-b09b-71d19dd27e94  rules/windows/process_creation/proc_creati
 065b00ca-5d5c-4557-ac95-64a6d0b64d86  rules/windows/process_creation/proc_creation_win_remote_access_tools_anydesk_susp_exec.yml  duplicate: every match is an AnyDesk program alert_rmm already reports with its path
 bef37fa2-f205-4a7b-b484-0759bfd5f86f  rules/windows/process_creation/proc_creation_win_pua_advanced_ip_scanner.yml  duplicate: the program name (also inside the /portable command line) is in suspicious_tools.txt, alert_suspicious_tools reports it
 9711de76-5d4f-4c50-a94f-21e4e8f8384d  rules/windows/file/file_event/file_event_win_install_teamviewer_desktop.yml  duplicate: the TeamViewer installer is a program alert_rmm already reports
+
+# phase 3 (2026-11-10): registry rules with Image in a selection, over hive state
+5aad0995-46ab-41bd-a9ff-724f41114971  rules/windows/registry/registry_event/registry_event_esentutl_volume_shadow_copy_service_keys.yml  the writer (esentutl) is the indicator; the VSS service keys exist on every host
+9c5037d1-c568-49b3-88c7-9846a5bdc2be  rules/windows/registry/registry_event/registry_event_susp_download_run_key.yml  the writer's folder is the indicator; a Run value pointing to a suspicious folder is covered by registry_set_susp_run_key_img_folder
+7f4c43f9-b1a5-4c7d-b24a-b41bf3a3ebf2  rules/windows/registry/registry_event/registry_event_susp_process_registry_modification.yml  only the writer (mshta/wscript/cscript) is tested; no key or value to test without it
+40b6e656-4e11-4c0c-8772-c1cc6dae34ce  rules/windows/registry/registry_set/registry_set_scr_file_executed_by_rundll32.yml  duplicate: without the writer it is a subset of registry_event_modify_screensaver_binary_path, already adapted
+4eec988f-7bf0-49f1-8675-1e6a510b3a2a  rules/windows/registry/registry_set/registry_set_susp_pendingfilerenameoperations.yml  the writer is the only discriminator; PendingFileRenameOperations is set by every installer
+6db5eaf9-88f7-4ed9-af7d-9ef2ad12f236  rules/windows/registry/registry_set/registry_set_winget_admin_settings_tampering.yml  the key lives in winget's app hive (\REGISTRY\A\), which the engine does not read

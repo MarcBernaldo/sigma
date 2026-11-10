@@ -6,7 +6,7 @@ references:
     - https://twitter.com/SBousseaden/status/1387530414185664538
 author: Christian Burkard (Nextron Systems)
 date: 2021-05-03
-modified: 2025-10-31
+modified: 2026-11-10
 tags:
     - attack.persistence
     - attack.t1136.001
@@ -14,10 +14,10 @@ logsource:
     product: windows
     category: registry_event
 detection:
+    # aeng: Image dropped - over the SAM hive's state no row names a process, and only lsass writes SAM; a local account name ending in $ is the indicator
     selection:
         TargetObject|contains: '\SAM\SAM\Domains\Account\Users\Names\'
         TargetObject|endswith: '$\(Default)'
-        Image|endswith: '\lsass.exe'
     condition: selection
 falsepositives:
     - Unknown

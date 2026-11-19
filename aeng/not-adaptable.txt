@@ -127,3 +127,12 @@ bef37fa2-f205-4a7b-b484-0759bfd5f86f  rules/windows/process_creation/proc_creati
 
 # phase 6 (2026-11-10): web rules through the fork
 19aa4f58-94ca-45ff-bc34-92e533c0994a  rules/web/webserver_generic/web_susp_useragents.yml  duplicate: every UA it names is in web_suspicious.txt scanner_ua (engine v0.7.198), alert_web reports it
+
+# Linux phase (2026-11-19): file_event over the bodyfile, network_connection over the live response's sockets
+ddb26b76-4447-4807-871f-1b035b2bfa5d  rules/linux/file_event/file_event_lnx_persistence_sudoers_files.yml  state noise: every Linux holds these files (4 of 4 hosts, the first match a distribution's own); a bodyfile is the file system's state, the rule is for a file being written
+6c4e2f43-d94d-4ead-b64d-97e53fa2bd05  rules/linux/file_event/file_event_lnx_susp_cron_file_created.yml  state noise: every Linux holds these files (4 of 4 hosts, the first match a distribution's own); a bodyfile is the file system's state, the rule is for a file being written
+13f08f54-e705-4498-91fd-cce9d9cee9f1  rules/linux/file_event/file_event_lnx_susp_shell_script_under_profile_directory.yml  state noise: every Linux holds these files (4 of 4 hosts, the first match a distribution's own); a bodyfile is the file system's state, the rule is for a file being written
+35a05c60-9012-49b6-a11f-6bab741c9f74  rules/linux/file_event/file_event_lnx_wget_download_file_in_tmp_dir.yml  needs Image: a bodyfile names no process
+a46c93b7-55ed-4d27-a41b-c259456c4746  rules/linux/network_connection/net_connection_lnx_crypto_mining_indicators.yml  needs DestinationHostname: the live response holds no DNS cache
+c4568f5d-131f-4e78-83d4-45b2da0ec4f1  rules/linux/network_connection/net_connection_lnx_domain_localtonet_tunnel.yml  needs DestinationHostname: the live response holds no DNS cache
+19bf6fdb-7721-4f3d-867f-53467f6a5db6  rules/linux/network_connection/net_connection_lnx_ngrok_tunnel.yml  needs DestinationHostname: the live response holds no DNS cache
